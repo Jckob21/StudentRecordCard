@@ -18,9 +18,12 @@
     <body>
         <img src="SUmenubar.png" alt="S W A N S E A   U N I V E R S I T Y   M E N U   B A R">
         <h1>Student Record Card</h1>
-    <?php
-            echo "<p>Init</p>";
-        ?>
+        
+        <form method="post">
+            <label for="POST-studID">Query by Student ID #:</label>
+            <input id="POST-studID" type="text" name="studID">
+            <input type="submit" value="Submit">
+        </form>
 
     </body>
 </html>
