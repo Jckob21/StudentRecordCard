@@ -1,5 +1,25 @@
 <!DOCTYPE HTML>
 
+<?php
+    //Database credentials
+    $databaseID = "localhost";
+    $databaseUser = "root";
+    $databasePassword = "";
+    $database_name = "student_record";
+
+    $connection = mysqli_connect($databaseID, $databaseUser, $databasePassword);
+    //check connection
+    if(!$connection) {
+        die("Error connecting to MySQL: " . mysqli_error($connection));
+    }
+
+    $connection_success = mysqli_select_db($connection, $database_name);
+    //check if database was selected with success
+    if(!$connection_success) {
+        die("Error selecting database: ". mysqli_error($connection));
+    }
+?>
+
 <html>
     <head>
         <meta charset="utf-8">
