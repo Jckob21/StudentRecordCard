@@ -24,6 +24,14 @@
             td {
                 padding: 0 40px;
             }
+
+            th {
+                background-color: #8FFFFB;
+            }
+
+            .total-credits {
+                text-align: right;
+            }
         </style>
     </head>
 
@@ -36,7 +44,9 @@
             <input id="POST-studID" type="text" name="studID">
             <input type="submit" value="Submit">
         </form>
+        
         <hr>
+        
         <h3>Personal Details</h3>
         <table>
             <tr>
@@ -61,6 +71,63 @@
             </tr>
         </table>
         
+        <h3>Course Details</h3>
+        <table>
+            <tr>
+                <td>UCAS Code</td>
+                <td>G999</td>
+            </tr>
+            <tr>
+                <td>Degree Scheme</td>
+                <td>BSc...</td>
+            </tr>
+            <tr>
+                <td>Department</td>
+                <td>XXXXXX  XXXXXX</td>
+            </tr>
+        </table>
 
+        <h3>Enrolment and Progress</h3>
+        <table>
+            <tr>
+                <th>Academic Year</th>
+                <th>Enrolment Status</th>
+                <th>Programme</th>
+                <th>Course Year</th>
+            </tr>
+            <tr>
+                <td>XXX</td>
+                <td>XXX</td>
+                <td>XXX</td>
+                <td>XXX</td>
+            </tr>
+        </table>
+
+        <h3>Module Selection</h3>
+        <table>
+            <tr>
+                <th>2001/2002</th>
+            </tr>
+            <tr>
+                <td>X99</td>
+                <td>XXX XXXX XXXXX</td>
+            </tr>
+            <tr>
+                <td class="total-credits">Total Credits: XXX</td>
+            </tr>
+
+            <tr>
+                <th>2000/2001</th>
+            </tr>
+            <tr>
+                <td>X98</td>
+                <td>XXX XXXX XXXXX</td>
+            </tr>
+            <tr>
+                <td>Total Credits: XXX</td>
+            </tr>
+        </table>
+
+        <img src="SUlogo.png" alt="S W A N S E A   U N I V E R S I T Y   L O G O">
     </body>
 </html>
