@@ -10,7 +10,19 @@
             h1 {
                 margin: 0px;
                 padding: 2px;
+            }
 
+            h3 {
+                margin: 0px;
+                padding: 2px;
+            }
+
+            table {
+                border: 1px solid black;
+            }
+
+            td {
+                padding: 0 40px;
             }
         </style>
     </head>
@@ -24,6 +36,31 @@
             <input id="POST-studID" type="text" name="studID">
             <input type="submit" value="Submit">
         </form>
+        <hr>
+        <h3>Personal Details</h3>
+        <table>
+            <tr>
+                <td>Student ID</td>
+                <td>999999</td>
+            </tr>
+            <tr>
+                <td>Title</td>
+                <td>Mr/Mrs</td>
+            </tr>
+            <tr>
+                <td>Full Name</td>
+                <td>XXXXXXX</td>
+            </tr>
+            <tr>
+                <td>Date of Birth</td>
+                <td>XX/XX/XXXX</td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>M/F/U</td>
+            </tr>
+        </table>
+        
 
     </body>
 </html>
