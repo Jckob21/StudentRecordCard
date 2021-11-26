@@ -52,6 +52,10 @@
             .total-credits {
                 text-align: right;
             }
+
+            .module-title {
+                text-align: left;
+            }
         </style>
     </head>
 
@@ -226,25 +230,27 @@
         <h3>Module Selection</h3>
         <table>
             <tr>
-                <th>2001/2002</th>
+                <th colspan="3">2001/2002</th>
             </tr>
             <tr>
                 <td>X99</td>
-                <td>XXX XXXX XXXXX</td>
+                <td class="module-title">XXX XXXX XXXXX</td>
+                <td>15</td>
             </tr>
             <tr>
-                <td class="total-credits">Total Credits: XXX</td>
+                <td class="total-credits" colspan="3">Total Credits: XXX</td>
             </tr>
 
             <tr>
-                <th>2000/2001</th>
+                <th colspan="3">2000/2001</th>
             </tr>
             <tr>
                 <td>X98</td>
-                <td>XXX XXXX XXXXX</td>
+                <td class="module-title">XXX XXXX XXXXX</td>
+                <td>10</td>
             </tr>
             <tr>
-                <td>Total Credits: XXX</td>
+                <td class="total-credits" colspan="3">Total Credits: XXX</td>
             </tr>
         </table>
 
