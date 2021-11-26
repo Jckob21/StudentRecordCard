@@ -13,3 +13,10 @@ FROM enrl, smod, mods
 WHERE enrl.ayr = smod.ayr AND enrl.sid = smod.sid AND
 smod.mid = mods.mid AND enrl.sid = 166296
 ORDER BY smod.ayr desc;
+
+-- MODULE SELECTION DETAILS IN IMPROVED ORDER
+SELECT smod.ayr, smod.mid, mtitle, credits
+FROM enrl, smod, mods
+WHERE enrl.ayr = smod.ayr AND enrl.sid = smod.sid AND
+smod.mid = mods.mid AND enrl.sid = 166296
+ORDER BY smod.ayr desc, smod.mid desc;
