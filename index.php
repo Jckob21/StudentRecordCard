@@ -66,30 +66,63 @@
         </form>
         
         <hr>
-        
+
         <h3>Personal Details</h3>
-        <table>
-            <tr>
-                <td>Student ID</td>
-                <td>999999</td>
-            </tr>
-            <tr>
-                <td>Title</td>
-                <td>Mr/Mrs</td>
-            </tr>
-            <tr>
-                <td>Full Name</td>
-                <td>XXXXXXX</td>
-            </tr>
-            <tr>
-                <td>Date of Birth</td>
-                <td>XX/XX/XXXX</td>
-            </tr>
-            <tr>
-                <td>Gender</td>
-                <td>M/F/U</td>
-            </tr>
-        </table>
+<?php
+///////////////////////////////  PERSONAL DATA  ///////////////////////////////
+    if(isset($_POST["studID"]))
+    {
+        $query = "SELECT * FROM stud WHERE sid = ".$_POST["studID"];
+        $result = mysqli_query($connection, $query);
+        
+        
+        if($row = mysqli_fetch_array($result))
+        {
+            echo "<table>";
+
+            //studentID
+            echo "<tr>";
+            echo    "<td>Student ID</td>";
+            echo    "<td>".$row["sid"]."</td>";
+            echo "</tr>";
+
+            //title
+            echo "<tr>";
+            echo    "<td>Title</td>";
+            echo    "<td>".$row["title"]."</td>";
+            echo "</tr>";
+
+            //full name
+            echo "<tr>";
+            echo    "<td>Full name</td>";
+            echo    "<td>" . $row["firstname"] . " " . $row["lastname"] . "</td>";
+            echo "</tr>";
+
+            //date of birth
+            echo "<tr>";
+            echo    "<td>Date of Birth</td>";
+            echo    "<td>".$row["dob"]."</td>";
+            echo "</tr>";
+
+            //gender
+            echo "<tr>";
+            echo    "<td>Gender</td>";
+            if($row["gender"] == "m")
+            {
+                echo    "<td>Male</td>";
+            } else
+            {
+                echo    "<td>Female</td>";
+            }
+            echo "</tr>";
+
+            echo "</table>";
+        } else
+        {
+            echo "Student number record not found.";
+        }
+    }
+?>
         
         <h3>Course Details</h3>
         <table>
