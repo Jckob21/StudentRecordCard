@@ -52,6 +52,7 @@
 
             .total-credits {
                 text-align: right;
+                font-weight: bold;
             }
 
             .module-title {
