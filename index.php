@@ -237,17 +237,30 @@
         $result = mysqli_query($connection, $query);
 
         echo "<table>";
-        
-        $currentYear = "0000/00";
 
+        $currentYear = "0000/00";
+        $totalCreditsYear = 0;
         while($row = mysqli_fetch_array($result))
         {
+            //if it is another year, print credits and year column
             if($currentYear != $row["ayr"])
             {
+                //credits - first iteration should be omitted
+                if($currentYear != "0000/00")
+                {
+                    echo    "<tr>";
+                    echo        '<td class="total-credits" colspan="3">Total credits: ' . $totalCreditsYear . '</td>';
+                    echo    "</tr>";
+                }
+
+                // year column
                 echo    "<tr>";
                 echo        '<th colspan="3">' . $row["ayr"] . '</th>';
                 echo    "</tr>";
+
+                //set variables for next year
                 $currentYear = $row["ayr"];
+                $totalCreditsYear = 0;
             }
 
             echo "<tr>";
@@ -255,7 +268,15 @@
             echo    "<td>" . $row["mtitle"] . "</td>";
             echo    "<td>" . $row["credits"] . "</td>";
             echo "</tr>";
+
+            //increase the total credits with this row credits number
+            $totalCreditsYear = $totalCreditsYear + $row["credits"];
         }
+
+        //print last total credits
+        echo    "<tr>";
+        echo        '<td class="total-credits" colspan="3">Total credits: ' . $totalCreditsYear . '</td>';
+        echo    "</tr>";
         
         echo "</table>";
     }
