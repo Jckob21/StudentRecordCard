@@ -124,7 +124,48 @@
     }
 ?>
         
+
         <h3>Course Details</h3>
+
+<?php
+///////////////////////////////  COURSE DETAILS  //////////////////////////////
+    if(isset($_POST["studID"]))
+    {
+        //desc to get highest lvl?
+        $query = "SELECT enrl.pid, paward, ptitle, prog.did, length, dname FROM enrl, prog, dept WHERE enrl.pid=prog.pid AND prog.did=dept.did AND sid=" . $_POST["studID"] . " GROUP BY pid";
+        $result = mysqli_query($connection, $query);
+        
+        
+        if($row = mysqli_fetch_array($result))
+        {
+            echo "<table>";
+
+            //UCAS Code
+            echo "<tr>";
+            echo    "<td>UCAS Code</td>";
+            echo    "<td>".$row["pid"]."</td>";
+            echo "</tr>";
+
+            //Degree Scheme
+            echo "<tr>";
+            echo    "<td>Degree Scheme</td>";
+            echo    "<td>" . $row["paward"]. " " . $row["ptitle"] . " " . $row["length"] . "yr</td>";
+            echo "</tr>";
+
+            //Department
+            echo "<tr>";
+            echo    "<td>Department</td>";
+            echo    "<td>".$row["dname"]."</td>";
+            echo "</tr>";
+
+            echo "</table>";
+        } else
+        {
+            echo "Student number record not found.";
+        }
+    }
+?>
+        
         <table>
             <tr>
                 <td>UCAS Code</td>
