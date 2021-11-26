@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 
 <?php
+//////////////////////////  CONNECTION TO DATABASE  ///////////////////////////
     //Database credentials
     $databaseID = "localhost";
     $databaseUser = "root";
@@ -60,9 +61,11 @@
     </head>
 
     <body>
+        <!--        HEADER      -->
         <img src="SUmenubar.png" alt="S W A N S E A   U N I V E R S I T Y   M E N U   B A R">
         <h1>Student Record Card</h1>
         
+        <!--        FORM QUERY HOLDER       -->
         <form method="post">
             <label for="POST-studID">Query by Student ID #:</label>
             <input id="POST-studID" type="text" name="studID">
@@ -71,6 +74,7 @@
         
         <hr>
 
+        <!--        PERSONAL DETAILS SECTION        -->
         <h3>Personal Details</h3>
 <?php
 ///////////////////////////////  PERSONAL DATA  ///////////////////////////////
@@ -128,7 +132,7 @@
     }
 ?>
         
-
+        <!--        COURSE DETAILS SECTION        -->
         <h3>Course Details</h3>
 
 <?php
@@ -171,6 +175,7 @@
 ?>
 
         <hr>
+        <!--        ENROLMENT AND PROGRESS SECTION        -->
         <h3>Enrolment and Progress</h3>
 
 <?php
@@ -227,6 +232,7 @@
 ?>
 
         <hr>
+        <!--        MODULE SELECTION SECTION        -->
         <h3>Module Selection</h3>
 <?php
 //////////////////////////  Enrolment and Progress  ///////////////////////////
@@ -282,32 +288,7 @@
     }
 ?>
 
-        <table>
-            <tr>
-                <th colspan="3">2001/2002</th>
-            </tr>
-            <tr>
-                <td>X99</td>
-                <td class="module-title">XXX XXXX XXXXX</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td class="total-credits" colspan="3">Total Credits: XXX</td>
-            </tr>
-
-            <tr>
-                <th colspan="3">2000/2001</th>
-            </tr>
-            <tr>
-                <td>X98</td>
-                <td class="module-title">XXX XXXX XXXXX</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td class="total-credits" colspan="3">Total Credits: XXX</td>
-            </tr>
-        </table>
-
+        <!--        FOOTER        -->
         <img src="SUlogo.png" alt="S W A N S E A   U N I V E R S I T Y   L O G O">
     </body>
 </html>
