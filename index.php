@@ -243,7 +243,7 @@
     if(isset($_POST["studID"]))
     {
         
-        $query =    "SELECT smod.ayr, smod.mid, mtitle, credits FROM enrl, smod, mods WHERE enrl.ayr = smod.ayr AND enrl.sid = smod.sid AND smod.mid = mods.mid AND enrl.sid = " . $_POST["studID"] . " ORDER BY smod.ayr desc, smod.mid desc";
+        $query =    "SELECT * FROM smod, mods WHERE smod.mid = mods.mid AND sid = " . $_POST["studID"] . " ORDER BY ayr DESC, smod.mid DESC";
         $result = mysqli_query($connection, $query);
 
         echo "<table>";
