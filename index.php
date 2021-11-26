@@ -84,7 +84,7 @@
         $query = "SELECT * FROM stud WHERE sid = ".$_POST["studID"];
         $result = mysqli_query($connection, $query);
         
-        
+        //display personal details table
         if($row = mysqli_fetch_array($result))
         {
             echo "<table>";
@@ -116,6 +116,7 @@
             //gender
             echo "<tr>";
             echo    "<td>Gender</td>";
+            //translate gender shortcut
             if($row["gender"] == "m")
             {
                 echo    "<td>Male</td>";
@@ -126,7 +127,7 @@
             echo "</tr>";
 
             echo "</table>";
-        } else
+        } else //if query didn't return any results
         {
             echo "Student number record not found.";
         }
@@ -144,7 +145,7 @@
         $query = "SELECT enrl.pid, paward, ptitle, prog.did, length, dname FROM enrl, prog, dept WHERE enrl.pid=prog.pid AND prog.did=dept.did AND sid=" . $_POST["studID"] . " GROUP BY pid";
         $result = mysqli_query($connection, $query);
         
-        
+        //display Course Details table
         if($row = mysqli_fetch_array($result))
         {
             echo "<table>";
@@ -168,7 +169,7 @@
             echo "</tr>";
 
             echo "</table>";
-        } else
+        } else // query didn't return any results
         {
             echo "Student number record not found.";
         }
@@ -187,6 +188,7 @@
         $query = "SELECT * FROM enrl, stud, prog WHERE enrl.sid = stud.sid AND enrl.pid = prog.pid AND enrl.sid = " . $_POST["studID"] . " ORDER BY lvl DESC";
         $result = mysqli_query($connection, $query);
         
+        //display headers for enrolment and progress tables
         echo "<table>";
         echo    "<tr>";
         echo        "<th>Academic Year</th>";
@@ -195,6 +197,7 @@
         echo        "<th>Course Year</th>";
         echo    "</tr>";
 
+        //populate enrolment records
         while($row = mysqli_fetch_array($result))
         {
             echo "<tr>";
