@@ -239,7 +239,7 @@
         <!--        MODULE SELECTION SECTION        -->
         <h3>Module Selection</h3>
 <?php
-//////////////////////////  Enrolment and Progress  ///////////////////////////
+//////////////////////////  MODULE SELECTION SECTION  ///////////////////////////
     if(isset($_POST["studID"]))
     {
         
