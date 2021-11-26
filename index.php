@@ -171,7 +171,7 @@
     if(isset($_POST["studID"]))
     {
         
-        $query = "SELECT * FROM enrl, stud, prog WHERE enrl.sid = stud.sid AND enrl.pid = prog.pid AND enrl.sid = " . $_POST["studID"];
+        $query = "SELECT * FROM enrl, stud, prog WHERE enrl.sid = stud.sid AND enrl.pid = prog.pid AND enrl.sid = " . $_POST["studID"] . " ORDER BY lvl DESC";
         $result = mysqli_query($connection, $query);
         
         echo "<table>";
