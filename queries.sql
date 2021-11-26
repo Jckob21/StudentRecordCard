@@ -8,3 +8,8 @@ SELECT enrl.pid, paward, ptitle, prog.did, length, dname FROM enrl, prog, dept W
 SELECT * FROM enrl, stud, prog WHERE enrl.sid = stud.sid AND enrl.pid = prog.pid AND enrl.sid = 166296 ORDER BY lvl DESC;
 
 -- GET MODULE SELECTION DETAILS
+SELECT smod.ayr, smod.mid, mtitle, credits
+FROM enrl, smod, mods
+WHERE enrl.ayr = smod.ayr AND enrl.sid = smod.sid AND
+smod.mid = mods.mid AND enrl.sid = 166296
+ORDER BY smod.ayr desc;
