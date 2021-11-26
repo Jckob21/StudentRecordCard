@@ -186,7 +186,30 @@
         {
             echo "<tr>";
             echo    "<td>" . $row["ayr"] . "</td>";
-            echo    "<td>" . $row["status"] . "</td>";
+
+            // translate status shortcut into description
+            switch($row["status"])
+            {
+                case "NE":
+                    echo "<td>" . "Not Enrolled" . "</td>";
+                    break;
+                case "E":
+                    echo "<td>" . "Enrolled" . "</td>";
+                    break;
+                case "ER":
+                    echo "<td>" . "Enrolled Repeat" . "</td>";
+                    break;
+                case "T":
+                    echo "<td>" . "Enrolled then Transferred" . "</td>";
+                    break;
+                case "W":
+                    echo "<td>" . "Enrolled then Withdrawn" . "</td>";
+                    break;
+                case "S":
+                    echo "<td>" . "Enrolled then Suspended" . "</td>";
+                    break;
+            }
+
             echo    "<td>" . $row["ptitle"] . "</td>";
             echo    "<td>" . $row["lvl"] . "</td>";
             echo "</tr>";
