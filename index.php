@@ -166,6 +166,9 @@
     }
 ?>
 
+        <hr>
+        <h3>Enrolment and Progress</h3>
+
 <?php
 //////////////////////////  Enrolment and Progress  ///////////////////////////
     if(isset($_POST["studID"]))
@@ -218,22 +221,8 @@
         echo "</table>";
     }
 ?>
-        <h3>Enrolment and Progress</h3>
-        <table>
-            <tr>
-                <th>Academic Year</th>
-                <th>Enrolment Status</th>
-                <th>Programme</th>
-                <th>Course Year</th>
-            </tr>
-            <tr>
-                <td>XXX</td>
-                <td>XXX</td>
-                <td>XXX</td>
-                <td>XXX</td>
-            </tr>
-        </table>
 
+        <hr>
         <h3>Module Selection</h3>
         <table>
             <tr>
