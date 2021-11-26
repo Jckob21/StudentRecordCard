@@ -165,22 +165,36 @@
         }
     }
 ?>
-        
-        <table>
-            <tr>
-                <td>UCAS Code</td>
-                <td>G999</td>
-            </tr>
-            <tr>
-                <td>Degree Scheme</td>
-                <td>BSc...</td>
-            </tr>
-            <tr>
-                <td>Department</td>
-                <td>XXXXXX  XXXXXX</td>
-            </tr>
-        </table>
 
+<?php
+//////////////////////////  Enrolment and Progress  ///////////////////////////
+    if(isset($_POST["studID"]))
+    {
+        
+        $query = "SELECT * FROM enrl, stud, prog WHERE enrl.sid = stud.sid AND enrl.pid = prog.pid AND enrl.sid = " . $_POST["studID"];
+        $result = mysqli_query($connection, $query);
+        
+        echo "<table>";
+        echo    "<tr>";
+        echo        "<th>Academic Year</th>";
+        echo        "<th>Enrolment Status</th>";
+        echo        "<th>Programme</th>";
+        echo        "<th>Course Year</th>";
+        echo    "</tr>";
+
+        while($row = mysqli_fetch_array($result))
+        {
+            echo "<tr>";
+            echo    "<td>" . $row["ayr"] . "</td>";
+            echo    "<td>" . $row["status"] . "</td>";
+            echo    "<td>" . $row["ptitle"] . "</td>";
+            echo    "<td>" . $row["lvl"] . "</td>";
+            echo "</tr>";
+        }
+        
+        echo "</table>";
+    }
+?>
         <h3>Enrolment and Progress</h3>
         <table>
             <tr>
