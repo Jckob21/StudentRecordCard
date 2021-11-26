@@ -235,21 +235,10 @@
         
         $query =    "SELECT smod.ayr, smod.mid, mtitle, credits FROM enrl, smod, mods WHERE enrl.ayr = smod.ayr AND enrl.sid = smod.sid AND smod.mid = mods.mid AND enrl.sid = " . $_POST["studID"] . " ORDER BY smod.ayr desc, smod.mid desc";
         $result = mysqli_query($connection, $query);
-        
-        // print year and first module
-        $row = mysqli_fetch_array($result);
-        echo "<table>";
-        echo    "<tr>";
-        echo        '<th colspan="3">' . $row["ayr"] . '</th>';
-        echo    "</tr>";
-        //first module
-        echo "<tr>";
-        echo    "<td>" . $row["mid"] . "</td>";
-        echo    "<td>" . $row["mtitle"] . "</td>";
-        echo    "<td>" . $row["credits"] . "</td>";
-        echo "</tr>";
 
-        $currentYear = $row["ayr"];
+        echo "<table>";
+        
+        $currentYear = "0000/00";
 
         while($row = mysqli_fetch_array($result))
         {
