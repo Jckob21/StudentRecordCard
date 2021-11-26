@@ -142,7 +142,7 @@
     if(isset($_POST["studID"]))
     {
         //desc to get highest lvl?
-        $query = "SELECT enrl.pid, paward, ptitle, prog.did, length, dname FROM enrl, prog, dept WHERE enrl.pid=prog.pid AND prog.did=dept.did AND sid=" . $_POST["studID"] . " GROUP BY pid";
+        $query = "SELECT enrl.pid, paward, ptitle, prog.did, length, dname FROM enrl, prog, dept WHERE enrl.pid=prog.pid AND prog.did=dept.did AND sid=" . $_POST["studID"] . " GROUP BY pid ORDER BY lvl DESC";
         $result = mysqli_query($connection, $query);
         
         //display Course Details table
@@ -159,7 +159,7 @@
             //Degree Scheme
             echo "<tr>";
             echo    "<td>Degree Scheme</td>";
-            echo    "<td>" . $row["paward"]. " " . $row["ptitle"] . " " . $row["length"] . "yr</td>";
+            echo    "<td>" . $row["paward"]. " " . $row["dname"] . " " . $row["length"] . "yr</td>";
             echo "</tr>";
 
             //Department
