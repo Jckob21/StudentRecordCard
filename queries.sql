@@ -20,3 +20,9 @@ FROM enrl, smod, mods
 WHERE enrl.ayr = smod.ayr AND enrl.sid = smod.sid AND
 smod.mid = mods.mid AND enrl.sid = 166296
 ORDER BY smod.ayr desc, smod.mid desc;
+
+-- MODULE SELECTION WITHOUT NATURAL JOIN WITH enrl
+SELECT *
+FROM smod, mods
+WHERE smod.mid = mods.mid AND sid = 166296
+ORDER BY ayr DESC, smod.mid DESC;
